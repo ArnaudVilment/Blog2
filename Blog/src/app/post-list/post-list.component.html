@@ -1,0 +1,14 @@
+
+    <div [ngClass]="{'loveDef': postLoveIts === 0,
+        'lovePos': postLoveIts > 0,
+        'loveNeg': postLoveIts < 0}">
+        <div style="float: left;">
+            <h3 [ngStyle]="{color: getColor()}" style="display: inline;"> {{ postTitle }} </h3>
+        </div>
+        <div style="float: right;"><span > {{ postCreatedAt | date: 'short' }} </span></div>
+        <br/>
+        <div><p [ngStyle]="{color: getColor()}"> {{ postContent }} </p></div>
+
+        <button style="background-color: green; border-radius: 5px;" (click)="love('+')">Love its</button>
+        <button style="background-color: red; border-radius: 5px;" (click)="love('-')">Don't love its</button>
+    </div>
